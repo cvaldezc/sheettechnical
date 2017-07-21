@@ -1,0 +1,18 @@
+{
+  "name": "sheettechnical",
+  "description": "library sheet technical",
+  "main": "bower.js",
+  "authors": [
+    "Christian Valez <cvaldezchavez@gmail.com>"
+  ],
+  "license": "Private",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
