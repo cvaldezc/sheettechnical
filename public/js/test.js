@@ -1,0 +1,1 @@
+console.log('Hello World WebPack 3.3.0');
