@@ -1,16 +1,28 @@
-doctype html
-html
-  head
-    title= 'Sign In'
-    link(rel='stylesheet', href='/vendor/materialize/dist/css/materialize.min.css')
-    link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/css/style.css')
+extends ../layout
+block content
   body
+    link(rel='stylesheet', href='/css/style.css')
     section.row
-      i(class='fa fa-user-o')
-  footer
-    block footer
-    //- scripts
-    script(defer, type='text/javascript', src='/vendor/jquery/dist/jquery.min.js')
-    script(defer, type='text/javascript', src='/vendor/materialize/dist/js/materialize.min.js')
-    script(defer, type='text/javascript', src='/js/bundle.js')
+      aside(class="col s12 m12 l12")
+        h5(class="white-text") Biblioteca - Hojas Técnicas
+      aside(class="col s12 m12 l12")
+        br
+        br
+        br
+        br
+        br
+      aside(class="col s10 m4 l4 offset-m4 offset-l4 offset-s1 center-align")
+        i(class='fa fa-user-circle-o fa-3x white-text')
+      aside(class="col s10 m4 l4 offset-m4 offset-l4 offset-s1")
+        div(class="input-field")
+          input(type="text" id="user")
+          label(for="user") Usuario
+      aside(class="col s10 m4 l4 offset-m4 offset-l4 offset-s1")
+        div(class="input-field")
+          input(type="password" id="pwd")
+          label(for="pwd") Password
+      aside(class="col s10 m4 l4 offset-m4 offset-l4 offset-s1")
+        i(class="fa fa-circle-o-notch fa-2x white-text")
+        button(type="button", class="right waves-effect waves-light btn light-blue")
+          i(class="fa fa-sign-in")
+          span  Ingresar
