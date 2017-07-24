@@ -1,4 +1,13 @@
-body {
-    background-image: url('/images/library.jpg');
-    background-size: cover;
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+footer {
+    background: #323232;
+    height: 100px;
+    width: 100%;
 }

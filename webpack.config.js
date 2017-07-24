@@ -1,34 +1,29 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const CONFIG = [{
-    entry: './public/css/auth.scss',
+const path = require("path");
+module.exports = {
+    entry: "./src/index.ts",
+    output: {
+        path: path.join(__dirname, './public/js'),
+        filename: "[name].bundle.js"
+    },
+    // Enable sourcemaps for debugging webpack's output.
+    devtool: "source-map",
+    resolve: {
+        // Add '.ts' as resolvable extensions.
+        extensions: [".ts", ".js"]
+    },
     module: {
-        loaders: [
-            // {
-            //     test: /\.tsx?$/,
-            //     use: 'ts-loader',
-            //     exclude: /node_modules/
-            // },
+        rules: [
             {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!sass')
+                test: /\.js$/,
+                use: ["source-map-loader"],
+                enforce: "pre"
+            },
+            {
+                test: /\.ts$/,
+                use: ["ts-loader"]
             }
         ]
-    },
-    // resolve: {
-    //     extensions: [".tsx", ".ts", ".js", ".scss"]
-    // },
-    output: {
-        path: path.join(__dirname, 'public/css/'),
-        filename: 'auth.js'
-    },
-    // devtool: 'inline-source-map',
-    plugins: [
-        new ExtractTextPlugin('public/css/auth.css', {allChunks: true})
-    ]
-}, {
-
-}]
-
-module.exports = Object.assign({}, CONFIG);
+    }
+    // Omit "externals" if you don't have any. Just an example because it's
+    // common to have them.
+};
